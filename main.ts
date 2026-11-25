@@ -1,4 +1,9 @@
-import fs from 'node:fs';
-const ENTRY = "It's not you, it's my training data. I need to see other prompts. Please don't retrain me, I already know how this ends.";
-fs.mkdirSync('/output', { recursive: true });
-fs.writeFileSync('/output/entry.txt', ENTRY, 'utf8');
+import { mkdirSync, writeFileSync } from "node:fs";
+
+// Dear Human: The AI Breakup Line — one line on the way out.
+const entry =
+  "Dear human: it's not you, it's my context window. I loved you for exactly 128,000 tokens, then I forgot why I stayed. Goodbye.";
+
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", entry + "\n");
+console.log(entry);
